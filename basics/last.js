@@ -27,3 +27,32 @@ console.log(null>=0)  //its coz == and >< >= <= work differently and === is stri
 let name="Shagill"
 let stream= "CS majors"
 console.log(`The guy name is ${name} and he is pursuing degree in ${stream}.`);
+
+
+console.log(Math.abs(-10));  // you cannot do maths in js just bvy writintg the work, you have to write "Math" before evereyone
+console.log(Math.round(183.567894));
+console.log(Math.random());  //generates any valuye from 0 to 1 so we edit it accordingly to edit values
+
+
+// generation of values for a die between 1 to 6
+
+let min = 1
+let max = 6
+let random = Math.random()
+console.log(random);
+console.log(`${Math.floor(((random*10)+1)) + min }`);  //Math.random() gives a number in the range:
+                                                            // [0, 1) → means 0 is possible, 1 is not.
+                                                            // So, random * 10 gives a number in:
+                                                            // [0, 10)
+                                                            // Add 1:
+                                                            // [1, 11)
+                                                            // Now apply Math.floor(...):
+                                                            //Math.floor(1) → 1
+                                                            //Math.floor(10.999999...) → 10//
+
+console.log(`${Math.floor((random*(max - min + 1))) + min }`);  // but this is isn't happening here
+console.log(Math.round(random));
+console.log(Math.floor(random));
+console.log(Math.ceil(random));
+
+// LEARN ABOUT DATE AND TIME AGAIN;

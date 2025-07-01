@@ -24,4 +24,33 @@ const user = {
 }
 const date =[21,22,23]
 console.log(greetuser(user,date));
+//console.log(addtwo(3));
+const addtwo= function(num){            //another way of declaring funxn but is ke execute hone se pehle we can't call it unlike other functions due to hoisting
+    return num+2
+}
+console.log(addtwo(3));
+
+const library = {
+    cardholder: "user",
+    date: 2025,
+
+    greet: function() {                     //this is how you declare function inside an object
+        console.log(`Welcome to library ${this.cardholder}`);
+        console.log(this);
+        
+    },
+}
+
+library.greet()    
+console.log(this);  // this line will give an empty output as "this" is telling about global context which is empty agar yahi browser par hota to "window" print hota
+
+//arrow function
+//two ways to declare them
+const addnum = (num1,num2)=> {
+    return num1+num2
+}
+
+const subnum = (num1,num2)=> (num1-num2)
+
+console.log(addnum(5,6),subnum(6,5));
 

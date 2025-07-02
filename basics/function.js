@@ -54,3 +54,17 @@ const subnum = (num1,num2)=> (num1-num2)
 
 console.log(addnum(5,6),subnum(6,5));
 
+// IIFE functions : use to remove or avoid the pollution coming from global scope
+                    //basic work is to execute the fnxn immediately
+//SYNTAX:
+
+(function UA () {                      //named IIFE
+    console.log(`new student`);
+    
+})();           // semicolon is always needed when two IIFE are written 
+
+(()=>{                      //unnamed IIFE
+    console.log(`new member`);
+    
+}) ()
+

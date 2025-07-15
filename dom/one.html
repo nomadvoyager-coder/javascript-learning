@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-  <h1 id="dom" class="h1" >DOM Page done by me</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam enim adipisci dolorem suscipit ullam molestiae commodi,
+<body style="background-color: black; font-family: Arial, sans-serif;">
+  <h1 id="dom" class="h1" style="color: white; " >DOM Page done by me</h1>
+  <p  style="color: white; ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam enim adipisci dolorem suscipit ullam molestiae commodi,
      voluptates modi, aut distinctio quisquam dignissimos mollitia quod facilis quo et corporis omnis?</p>
-     <ul>
-      <li>one</li>
-      <li>two</li>
-      <li>three</li>
-      <li>four</li>
-      <li>five</li>
+     <ul  style="color: white;" class="parent">
+      <li class="nums">one</li>
+      <li class="nums">two</li>
+      <li class="nums">three</li>
+      <li class="nums">four</li>
+      <li class="nums">five</li>
      </ul>
 </body>
+
+<script>
+const parent = document.querySelector('.parent');
+const nums = document.querySelectorAll('.nums');
+
+console.log(parent.children);
+//console.log(nums);
+//console.log(parent.children[2].innerHTML);
+
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i].innerHTML);
+}
+
+console.log(parent.childNodes);
+
+</script>
 </html>
 
 <!-- innerText :  just gives the displayed value

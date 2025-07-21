@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+<body style="background-color: black; font-family: Arial, sans-serif; color: aliceblue">
+    <h2>Pictures</h2>
+    <div id="pics">
+<ul>
+    <li><img width="100px" id="pic1" src="https://i.pinimg.com/474x/a7/e8/89/a7e889effe08ecbede2ddaafbecdbd66.jpg" alt="cat"></li>
+    <li><img width="100px" id="pic2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM83WZHz4K23Uspuj_xqamNgIVpMll4ZHS7XVt8bPc7RlQo_cm3M2JqJxWzsqq1n8yDxs&usqp=CAU" alt=""></li>
+    <li><img width="100px" id="pic3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgMTjuSTQ07aFdOZe93yam43uLhXk-MqEqC8Dl6z3F0TDsK6aVvdnjPL_jJd0WdbNFL1k&usqp=CAU" alt=""></li>
+    <li><img width="100px" id="pic4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC2CIRZgiHM5dn_MvMqfpZk1tWGTvFG2ubyQGn0SvD60jysTK8NID3rigJenQWIP8r8pE&usqp=CAU" alt=""></li>
+</ul>
+ </div>
+</body>
+
+<script>
+// events things to study
+// type, timestamp,defaultprevented, target, currentTarget, toELement, srcElement, clientX, clientY, screenX, screenY, altkey, ctrlkey, shiftkey, keycode
+// Event propagation ;
+//false :bubble (bottom to top,default) true: capturing (top to bottom)
+
+// document.getElementById("pic1").onclick = function() {              //older and not a better method
+//         console.log("You clicked on the 1st picture!");
+//     };
+
+
+
+document.getElementById("pics").addEventListener("click",function(e){
+console.log("You clicked on pictures");
+ console.log(e.target.tagName);
+if(e.target.tagName === 'IMG'){
+e.target.parentNode.remove()
+    }   
+},false)   
+
+document.getElementById("pic2").addEventListener("click", function() {
+    console.log("You clicked on the 2nd picture!");
+    
+}, false);
+
+document.getElementById("pic3").addEventListener("click", function(e) {
+    console.log("You clicked on the 3rd picture!");
+    e.stopPropagation()
+}, false);
+
+</script>
+</html>

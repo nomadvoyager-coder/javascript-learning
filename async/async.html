@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button id="startInterval">Start the timeout</button>
+    <button id="stopInterval">Stop the timeout</button>
+</body>
+<script>
+
+    function interval (){
+      endInterval =  setInterval(timeout, 4000);        //this is bad practice qki code to chal gya lekin end interval explicitly 
+                                                        //declare karna chahie tha vo yahan pe implicitly ho gya apne ap
+    }
+
+    document.querySelector('#startInterval').addEventListener('click', () => {
+        console.log("Interval started");
+        
+        interval();
+    })    
+
+function timeout (){ setTimeout(() => {
+    console.log('This is the timeout message');
+}, 2000); }
+
+ document.querySelector('#stopInterval').addEventListener('click', () => {
+    console.log("Interval stopped");
+    
+clearInterval(endInterval);       
+    })  
+
+</script>
+</html>
